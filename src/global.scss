@@ -1,0 +1,9 @@
+$mainColor: #15023a;
+
+$width: 768px;
+
+@mixin mobile{                          // Los mixins permiten definir estilos que se pueden reutilizar en toda su hoja de estilo.
+    @media ( max-width: #{$width} ){    // Definimos el hancho apartir del cual cambiará el contenido de una sección.
+        @content
+    }
+}
