@@ -64,8 +64,8 @@ const Portfolio = () => {
 
     },[ selected ]);
 
-    return (
-        <div className="portfolio" id="portfolio">
+    return (                                            // Aquí situamos los botones de la seleccion de list
+        <div className="portfolio" id="portfolio">      
           <h1>Portfolio</h1>
           <ul>
               { list.map( item => (                     // Mapeamos la lista y obtenemos un item por cada elemento de la lista
@@ -78,9 +78,9 @@ const Portfolio = () => {
 
                   />
               ))}
-          </ul>
+          </ul>                                               
           <div className="container">
-                { data.map( d => (
+                { data.map( d => (                              // Aquí situamos el contenido de cada elemento de la list
                     <div className="item" key={uuidv4()}>
                     <img src={ d.img } alt="" />
                     <h3>{ d.title }</h3>

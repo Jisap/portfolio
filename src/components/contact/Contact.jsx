@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import "./contact.scss"
+import "./contact.scss";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
 
@@ -8,7 +9,16 @@ const Contact = () => {
     const handleSubmit = ( e ) => {
         e.preventDefault();
         setMessage(true)
-
+        emailjs.sendForm( 
+            'service_u6zawya',
+            'template_e0pjbif',
+             e.target,
+             'user_4OehDarPyFKnbKl1PPDJS' 
+        ).then( res => {
+            console.log(res);
+        }).catch( err => {
+            console.log(err);
+        })
     }
 
     return (
@@ -18,9 +28,11 @@ const Contact = () => {
             </div>
             <div className="right">
                 <h2>Contact</h2>
-                <form onSubmit={ handleSubmit }>
-                    <input type="text" placeholder="Email" />
-                    <textarea placeholder="Message"></textarea>
+                <form 
+                    onSubmit={ handleSubmit }
+                >
+                    <input type="text" name="user_email" placeholder="Email" />
+                    <textarea placeholder="Message" name="message"></textarea>
                     <button type="submit">Send</button>
                     { message && <span>Thanks, I´ll ASAP :)</span>}
                 </form>

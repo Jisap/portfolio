@@ -14,22 +14,27 @@ function App() {
   const [ MenuOpen, setMenuOpen ] = useState( false )
 
   return (
-    <div className="app">
-      <Topbar 
-        menuOpen={ MenuOpen }
-        setMenuOpen={ setMenuOpen }
-      />
-      <Menu
-        menuOpen={ MenuOpen }
-        setMenuOpen={ setMenuOpen }/>
-      <div className="sections">
-        <Intro />
-        <Portfolio />
-        <Works />
-        <Testimonials />
-        <Contact />
+  
+      <div className="app">
+        <Topbar 
+          menuOpen={ MenuOpen }
+          setMenuOpen={ setMenuOpen }
+        />
+        <Menu
+          menuOpen={ MenuOpen }
+          setMenuOpen={ setMenuOpen }
+        />
+
+        <div className="sections">
+          <Intro />
+          <Portfolio />
+          <Works />
+          <Testimonials />
+          <Contact />
+        </div>
+
       </div>
-    </div>
+    
   );
 }
 
